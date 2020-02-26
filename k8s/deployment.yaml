@@ -15,7 +15,7 @@ spec:
         app: ember-pipeline-example
     spec:
       containers:
-        - image: nodeshift/ember-pipeline-example:latest
+        - image: lholmquist/ember-pipeline-example:latest
           imagePullPolicy: Always
           name: ember-pipeline-example
           ports:
