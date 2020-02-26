@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ember-pipeline-example
+  name: ember-pipeline-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ember-pipeline-example
+  template:
+    metadata:
+      labels:
+        app: ember-pipeline-example
+    spec:
+      containers:
+        - image: nodeshift/ember-pipeline-example:latest
+          imagePullPolicy: Always
+          name: ember-pipeline-example
+          ports:
+            - containerPort: 8080
+              protocol: TCP
